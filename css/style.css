@@ -7,19 +7,28 @@ Dark green: #28b485
 
 */
 
-* {
+*
+*::after
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit; /* It's considered best practice use inherit here and set box sizing in <body> tag */
+}
+
+html {
+    /* font-size: 10px; */
+    font-size: 62.5%; /* 10/16 which is the 10px we want divided by default of 16px */
 }
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+
+    box-sizing: border-box;
 }
 
 .header {
@@ -44,12 +53,12 @@ body {
 
 .logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 .text-box {
@@ -71,9 +80,9 @@ body {
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-out;
 }
 
@@ -81,14 +90,14 @@ body {
     display: block;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 17.2px;
+    letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     60% {
@@ -96,7 +105,7 @@ body {
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
     
     100% {
@@ -108,7 +117,7 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     60% {
@@ -116,7 +125,7 @@ body {
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
     
     100% {
@@ -128,7 +137,7 @@ body {
 @keyframes moveInButton {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
     
     100% {
@@ -141,7 +150,7 @@ body {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     /* inline-block is necessary to stop it sitting on the element above */
     display: inline-block;
     border-radius: 50px;
@@ -189,5 +198,9 @@ body {
 .btn-animated {
     animation: moveInButton .5s ease-out .75s;
     animation-fill-mode: backwards;
+}
+
+#test {
+    font-size: 4rem;
 }
 
